@@ -18,7 +18,7 @@ class bkfyProperties(bpy.types.PropertyGroup):
     offset : FloatProperty(
         name = "Offset",
         description = "offset to change the speed of keyframes falling",
-        default = 30.0, precision = 2,
+        default = 5.0, precision = 2,
     )
         
     key_str : IntProperty(
