@@ -15,6 +15,11 @@ bl_info = {
 }
 
 class bkfyProperties(bpy.types.PropertyGroup):
+    height: IntProperty(
+        name = "Height",
+        description = "value for the height of the object which it will fall from",
+        default = 30
+    )
     offset : FloatProperty(
         name = "Offset",
         description = "offset to change the speed of keyframes falling",
@@ -47,16 +52,15 @@ class bkfy_process(bpy.types.Operator):
         mytool = scene.my_tools
         offset = mytool.offset
         
-        
         for obj in bpy.context.selected_objects:
             print(obj)
             #original_pos.append(obj.location)
             #selection_names.append(obj.name)
             #print(original_pos[val])
             #num = val + offset
-            obj.location.z += offset
+            obj.location.z += (mytool.height + offset)
             obj.keyframe_insert(data_path="location", frame=mytool.key_str)
-            obj.location.z -= offset
+            obj.location.z -= (mytool.height + offset) 
             obj.keyframe_insert(data_path="location", frame=mytool.key_end + offset + val)
             val += 1
         return {'FINISHED'}
@@ -76,6 +80,7 @@ class Breakdown(bpy.types.Panel):
         mytool = scene.my_tools
         
         layout.operator(bkfy_process.bl_idname, text="Breakdown-fy!", icon="SORT_ASC")
+        layout.prop(mytool, "height")
         layout.prop(mytool, "offset")
         layout.prop(mytool, "key_str")
         layout.prop(mytool, "key_end")
