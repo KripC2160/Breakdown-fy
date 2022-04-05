@@ -82,6 +82,8 @@ class Breakdown(bpy.types.Panel):
         layout.operator(bkfy_process.bl_idname, text="Breakdown-fy!", icon="SORT_ASC")
         layout.prop(mytool, "height")
         layout.prop(mytool, "offset")
+        layout.separator()
+        layout = layout.row(align=True)
         layout.prop(mytool, "key_str")
         layout.prop(mytool, "key_end")
 
