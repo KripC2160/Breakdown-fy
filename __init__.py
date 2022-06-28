@@ -66,7 +66,7 @@ class bkfy_process(bpy.types.Operator):
         mytool = scene.my_tools
         offset = mytool.offset
         nscene = mytool.nScene
-        nMat = mytool.nMat
+        #nMat = mytool.nMat
         
         if nscene == True:
             bpy.ops.scene.new(type='FULL_COPY')
