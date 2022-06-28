@@ -9,7 +9,7 @@ bl_info = {
     'name': 'Breakdown-fy',
     'description': 'A plugin to create breakdown animations with breeze',
     'author': 'KripC',
-    'version': (0, 1, 0),
+    'version': (0, 1, 1),
     "blender": (3, 1, 0),
     'location': 'View3D > Tools > Breakdown-fy',
     'link': 'https://github.com/KripC2160/Breakdown-fy/issues',
@@ -59,7 +59,7 @@ class bkfy_process(bpy.types.Operator):
          
     def execute(self, context):
         if len(bpy.context.selected_objects) > 0:
-        
+
             #selection_names = [] 
             #original_pos = []
             val = 0
@@ -68,7 +68,7 @@ class bkfy_process(bpy.types.Operator):
             offset = mytool.offset
             nscene = mytool.nScene
             #nMat = mytool.nMat
-        
+
             if nscene == True:
                 bpy.ops.scene.new(type='FULL_COPY')
         
@@ -92,7 +92,7 @@ class bkfy_man(bpy.types.Operator):
     bl_label = 'Manual'
     
     def execute(self, context):
-        webbrowser.open('https://github.com/KripC2160/Breakdown-fy')
+        webbrowser.open('https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#manual')
         return {'FINISHED'}
 
 class bkfy_sup(bpy.types.Operator):
@@ -150,3 +150,4 @@ def unregister():
         
 if __name__ == "__main__":
     register() 
+
