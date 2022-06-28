@@ -12,7 +12,7 @@ A blender addon to make the breakdown of the blender animation a breeze
 
 ## MANUAL
 - [Introduction](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#introduction)
-- [Getting Started](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#gettings-started)
+- [Getting Started](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#getting-started)
 - Create New Scene 
 - Height
 - Offset
