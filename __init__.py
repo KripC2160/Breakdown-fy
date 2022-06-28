@@ -1,7 +1,9 @@
 
 import bpy
+import webbrowser
 from bpy.props import (FloatProperty,
-                        IntProperty )
+                        IntProperty, 
+                        BoolProperty )
 
 bl_info = {
     'name': 'Breakdown-fy',
@@ -37,6 +39,18 @@ class bkfyProperties(bpy.types.PropertyGroup):
         description = "value for the end frame of the breakdown animation",
         default = 30,
     )
+    
+    nScene : BoolProperty(
+        name = "Create New Scene",
+        description = "creates a new scene for the breakdown animation when checked",
+        default = True
+    )
+    
+    #nMat : BoolProperty(
+    #    name = "Clay Render",
+    #    description = "converts all the objects into a same clay material",
+    #    default = False
+    #)
 
 class bkfy_process(bpy.types.Operator):
     bl_idname = "bkfy.process"
@@ -51,6 +65,11 @@ class bkfy_process(bpy.types.Operator):
         scene = context.scene
         mytool = scene.my_tools
         offset = mytool.offset
+        nscene = mytool.nScene
+        nMat = mytool.nMat
+        
+        if nscene == True:
+            bpy.ops.scene.new(type='FULL_COPY')
         
         for obj in bpy.context.selected_objects:
             print(obj)
@@ -63,6 +82,22 @@ class bkfy_process(bpy.types.Operator):
             obj.location.z -= (mytool.height + offset) 
             obj.keyframe_insert(data_path="location", frame=mytool.key_end + offset + val)
             val += 1
+        return {'FINISHED'}
+
+class bkfy_man(bpy.types.Operator):
+    bl_idname = 'bkfy.manual'
+    bl_label = 'Manual'
+    
+    def execute(self, context):
+        webbrowser.open('https://github.com/KripC2160/Breakdown-fy')
+        return {'FINISHED'}
+
+class bkfy_sup(bpy.types.Operator):
+    bl_idname = 'bkfy.support'
+    bl_label = 'Support'
+    
+    def execute(self, context):
+        webbrowser.open('https://github.com/KripC2160/Breakdown-fy/issues/new')
         return {'FINISHED'}
     
         
@@ -78,19 +113,25 @@ class Breakdown(bpy.types.Panel):
         layout = self.layout
         scene = context.scene
         mytool = scene.my_tools
-        
+
         layout.operator(bkfy_process.bl_idname, text="Breakdown-fy!", icon="SORT_ASC")
+        layout.prop(mytool, "nScene")
+        #layout.prop(mytool, "nMat") WIP 
         layout.prop(mytool, "height")
-        layout.prop(mytool, "offset")
+        layout.prop(mytool, "offset") 
+        r = layout.row(align=True)
+        r.prop(mytool, "key_str")
+        r.prop(mytool, "key_end")
         layout.separator()
-        layout = layout.row(align=True)
-        layout.prop(mytool, "key_str")
-        layout.prop(mytool, "key_end")
+        layout.operator(bkfy_man.bl_idname, text="Manual", icon='TEXT')
+        layout.operator(bkfy_sup.bl_idname, text="Support/Report a bug", icon="ERROR")
 
 classes = (
     bkfyProperties,
     Breakdown,
     bkfy_process,
+    bkfy_man,
+    bkfy_sup,
 )
     
     
