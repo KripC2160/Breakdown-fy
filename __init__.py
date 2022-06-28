@@ -89,7 +89,7 @@ class bkfy_man(bpy.types.Operator):
     bl_label = 'Manual'
     
     def execute(self, context):
-        webbrowser.open('https://github.com/KripC2160/Breakdown-fy')
+        webbrowser.open('https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#manual')
         return {'FINISHED'}
 
 class bkfy_sup(bpy.types.Operator):
