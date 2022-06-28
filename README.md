@@ -11,7 +11,7 @@ A blender addon to make the breakdown of the blender animation a breeze
 --- 
 
 ## MANUAL
-- [Introduction](https://github.com/KripC2160/Breakdown-fy/edit/main/README.md#Introduction)
+- [Introduction](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#introduction)
 - Breakdown-fy
 - New Scene 
 - Height
