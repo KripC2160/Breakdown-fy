@@ -58,31 +58,34 @@ class bkfy_process(bpy.types.Operator):
     bl_options = {'REGISTER', 'UNDO'}
          
     def execute(self, context):
+        if len(bpy.context.selected_objects) > 0:
         
-        #selection_names = [] 
-        #original_pos = []
-        val = 0
-        scene = context.scene
-        mytool = scene.my_tools
-        offset = mytool.offset
-        nscene = mytool.nScene
-        nMat = mytool.nMat
+            #selection_names = [] 
+            #original_pos = []
+            val = 0
+            scene = context.scene
+            mytool = scene.my_tools
+            offset = mytool.offset
+            nscene = mytool.nScene
+            #nMat = mytool.nMat
         
-        if nscene == True:
-            bpy.ops.scene.new(type='FULL_COPY')
+            if nscene == True:
+                bpy.ops.scene.new(type='FULL_COPY')
         
-        for obj in bpy.context.selected_objects:
-            print(obj)
-            #original_pos.append(obj.location)
-            #selection_names.append(obj.name)
-            #print(original_pos[val])
-            #num = val + offset
-            obj.location.z += (mytool.height + offset)
-            obj.keyframe_insert(data_path="location", frame=mytool.key_str)
-            obj.location.z -= (mytool.height + offset) 
-            obj.keyframe_insert(data_path="location", frame=mytool.key_end + offset + val)
-            val += 1
-        return {'FINISHED'}
+            for obj in bpy.context.selected_objects:
+                print(obj)
+                #original_pos.append(obj.location)
+                #selection_names.append(obj.name)
+                #print(original_pos[val])
+                #num = val + offset
+                obj.location.z += (mytool.height + offset)
+                obj.keyframe_insert(data_path="location", frame=mytool.key_str)
+                obj.location.z -= (mytool.height + offset) 
+                obj.keyframe_insert(data_path="location", frame=mytool.key_end + offset + val)
+                val += 1
+            return {'FINISHED'}
+        else:
+            return {'FINISHED'}
 
 class bkfy_man(bpy.types.Operator):
     bl_idname = 'bkfy.manual'
@@ -146,4 +149,4 @@ def unregister():
         del bpy.types.Scene.my_tools
         
 if __name__ == "__main__":
-    register()
+    register() 
