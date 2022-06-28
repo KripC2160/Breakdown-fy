@@ -9,7 +9,7 @@ bl_info = {
     'name': 'Breakdown-fy',
     'description': 'A plugin to create breakdown animations with breeze',
     'author': 'KripC',
-    'version': (0, 1, 0),
+    'version': (0, 1, 1),
     "blender": (3, 1, 0),
     'location': 'View3D > Tools > Breakdown-fy',
     'link': 'https://github.com/KripC2160/Breakdown-fy/issues',
