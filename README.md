@@ -27,6 +27,6 @@ Breakdown-fh is an addon that lets you create breakdown animations you would see
 tedious task of manually animating each object one at a time, and manages to be flexible at the same time. There are many variables that you can control, 
 in order to create the scene best suited for your needs.
 
-### Gettings Started 
+### Getting Started 
 open a new project in blender, select the default cube, and open the side panel (key N by default) and find Breakdown-fy addon. Click the **Breakdown-fy!** and you have just created a breakdown animation!
 
