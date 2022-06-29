@@ -23,7 +23,7 @@ A blender addon to make the breakdown of the blender animation a breeze
 
 
 ### Introduction
-Breakdown-fh is an addon that lets you create breakdown animations you would see in animation Behind the Scenes videos. This tool automates the
+Breakdown-fy is an addon that lets you create breakdown animations you would see in animation Behind the Scenes videos. This tool automates the
 tedious task of manually animating each object one at a time, and manages to be flexible at the same time. There are many variables that you can control, 
 in order to create the scene best suited for your needs.
 
@@ -32,8 +32,10 @@ in order to create the scene best suited for your needs.
 2. Select the default cube, and open the side panel (key N by default) and find Breakdown-fy addon
 3. Click the **Breakdown-fy!** button and you have just created a breakdown animation!
 
+There are numerous ways you can create breakdown animations. You can select all of the objects, select few objects at a time and drop them in a different intervals, dropping objects in different heights and time, etc. 
+
 ### Create New Scene 
-This option creates the breakdown animation on a separate scene. This option is on by default.
+This option creates the breakdown animation on a separate scene. This option is on by default. After creating a breakdown animation, the option turns off to prevent new scenes from being created by accident, but it can be turned on again if needed. 
 
 ### Height
 Height variable changes the height which the objects will be dropping from. To achieve the objects coming out from the ground, set the values to negative ones. 
