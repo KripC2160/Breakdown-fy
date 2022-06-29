@@ -19,7 +19,7 @@ A blender addon to make the breakdown of the blender animation a breeze
 - [Start Frame](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#start-frame)
 - [End Frame](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#end-frame)
 - [Manual](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#manual)
-- [Support/Report a Bug](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#support/report-a-bug)
+- [Support/Report a Bug](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#supportreport-a-bug)
 
 
 ### Introduction
