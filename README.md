@@ -14,12 +14,12 @@ A blender addon to make the breakdown of the blender animation a breeze
 - [Introduction](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#introduction)
 - [Getting Started](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#getting-started)
 - [Create New Scene](https://github.com/KripC160/Breakdown-fy/blob/main/README.md#create-new-scene) 
-- [Height](https://github.com/KripC160/Breakdown-fy/blob/main/README.md#height)
-- [Offset](https://github.com/KripC160/Breakdown-fy/blob/main/README.md#offset)
-- [Start Frame](https://github.com/KripC160/Breakdown-fy/blob/main/README.md#start-frame)
-- [End Frame](https://github.com/KripC160/Breakdown-fy/blob/main/README.md#end-frame)
-- [Manual](https://github.com/KripC160/Breakdown-fy/blob/main/README.md#manual)
-- [Support/Report a Bug](https://github.com/KripC160/Breakdown-fy/blob/main/README.md#support/report-a-bug)
+- [Height](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#height)
+- [Offset](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#offset)
+- [Start Frame](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#start-frame)
+- [End Frame](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#end-frame)
+- [Manual](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#manual)
+- [Support/Report a Bug](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#support/report-a-bug)
 
 
 ### Introduction
