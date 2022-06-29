@@ -71,6 +71,7 @@ class bkfy_process(bpy.types.Operator):
 
             if nscene == True:
                 bpy.ops.scene.new(type='FULL_COPY')
+                bpy.context.scene.my_tools.nScene = False
         
             for obj in bpy.context.selected_objects:
                 print(obj)
