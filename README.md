@@ -2,6 +2,12 @@
 
 A blender addon to make the breakdown of the blender animation a breeze
 
+
+https://user-images.githubusercontent.com/65854891/176578393-080365e7-3074-4164-931e-d523ec16a92e.mp4
+
+![Screenshot 2022-06-30 111653](https://user-images.githubusercontent.com/65854891/176578634-8ec6a8a5-7c4b-4f72-950c-4cf343a195b1.png)
+
+
 ### Installation guide
 1. Click the download button on the top right and install zip
 2. Open Blender, click Edit -> Settings -> Addons and click **install...**
