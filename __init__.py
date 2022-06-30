@@ -9,7 +9,7 @@ bl_info = {
     'name': 'Breakdown-fy',
     'description': 'A plugin to create breakdown animations with breeze',
     'author': 'KripC',
-    'version': (0, 1, 1),
+    'version': (0, 1, 2),
     "blender": (3, 1, 0),
     'location': 'View3D > Tools > Breakdown-fy',
     'link': 'https://github.com/KripC2160/Breakdown-fy/issues',
@@ -46,11 +46,11 @@ class bkfyProperties(bpy.types.PropertyGroup):
         default = True
     )
     
-    #nMat : BoolProperty(
-    #    name = "Clay Render",
-    #    description = "converts all the objects into a same clay material",
-    #    default = False
-    #)
+    nMat : BoolProperty(
+        name = "Clay Render",
+        description = "converts all the objects into a same clay material",
+        default = False
+    )
 
 class bkfy_process(bpy.types.Operator):
     bl_idname = "bkfy.process"
@@ -67,7 +67,7 @@ class bkfy_process(bpy.types.Operator):
             mytool = scene.my_tools
             offset = mytool.offset
             nscene = mytool.nScene
-            #nMat = mytool.nMat
+            nMat = mytool.nMat
 
             if nscene == True:
                 bpy.ops.scene.new(type='FULL_COPY')
@@ -84,6 +84,24 @@ class bkfy_process(bpy.types.Operator):
                 obj.location.z -= (mytool.height + offset) 
                 obj.keyframe_insert(data_path="location", frame=mytool.key_end + offset + val)
                 val += 1
+            
+            if nMat == True: 
+                if 'bkfyclay' not in bpy.data.materials:
+                    bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False, align='WORLD', location=(0,0,0), scale=(0.1, 0.1, 0.1))
+                    obj = bpy.context.object
+                    mat = bpy.data.materials.new(name='bkfyclay')
+                    bpy.context.object.active_material.specular_intensity = 0 
+                    bpy.context.object.active_material.roughness = 1
+                    bpy.data.objects.remove(bpy.context.object, do_unlink=True)
+                    """
+                    bpy.context.scene.render.engine = 'CYCLES'
+                    bpy.context.scene.view_layers["ViewLayer"].material_override = bpy.data.materials["bkfyclay"]
+                    """
+                bpy.ops.object.select_all(action='SELECT')
+                for obj in bpy.context.selected_objects:
+                    for slot in obj.material_slots:
+                        slot.material = bpy.data.materials["bkfyclay"]
+                                
             return {'FINISHED'}
         else:
             return {'FINISHED'}
@@ -120,7 +138,7 @@ class Breakdown(bpy.types.Panel):
 
         layout.operator(bkfy_process.bl_idname, text="Breakdown-fy!", icon="SORT_ASC")
         layout.prop(mytool, "nScene")
-        #layout.prop(mytool, "nMat") WIP 
+        layout.prop(mytool, "nMat")
         layout.prop(mytool, "height")
         layout.prop(mytool, "offset") 
         r = layout.row(align=True)
@@ -137,7 +155,6 @@ classes = (
     bkfy_man,
     bkfy_sup,
 )
-    
     
 def register():
     for cls in classes:
