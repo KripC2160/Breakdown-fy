@@ -90,7 +90,7 @@ class bkfy_process(bpy.types.Operator):
                     bpy.ops.mesh.primitive_plane_add(size=2, enter_editmode=False, align='WORLD', location=(0,0,0), scale=(0.1, 0.1, 0.1))
                     obj = bpy.context.object
                     mat = bpy.data.materials.new(name='bkfyclay')
-                    bpy.context.object.active_material.specular_intensity = 0 
+                    #bpy.context.object.active_material.specular_intensity = 0 TODO: find out what is causing error
                     bpy.context.object.active_material.roughness = 1
                     bpy.data.objects.remove(bpy.context.object, do_unlink=True)
                     """
