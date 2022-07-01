@@ -20,6 +20,7 @@ https://user-images.githubusercontent.com/65854891/176578393-080365e7-3074-4164-
 - [Introduction](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#introduction)
 - [Getting Started](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#getting-started)
 - [Create New Scene](https://github.com/KripC160/Breakdown-fy/blob/main/README.md#create-new-scene) 
+- [Clay Render](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#clay-render)
 - [Height](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#height)
 - [Offset](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#offset)
 - [Start Frame](https://github.com/KripC2160/Breakdown-fy/blob/main/README.md#start-frame)
@@ -42,6 +43,9 @@ There are numerous ways you can create breakdown animations. You can select all 
 
 ### Create New Scene 
 This option creates the breakdown animation on a separate scene. This option is on by default. After creating a breakdown animation, the option turns off to prevent new scenes from being created by accident, but it can be turned on again if needed. 
+
+### Clay Render
+This options applies the clay material on objects. It is turned off by default. 
 
 ### Height
 Height variable changes the height which the objects will be dropping from. To achieve the objects coming out from the ground, set the values to negative ones. 
